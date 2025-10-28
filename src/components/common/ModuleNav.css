@@ -1,0 +1,243 @@
+.module-nav {
+  position: sticky;
+  top: var(--header-height);
+  width: 100%;
+  background-color: var(--bg-primary);
+  border-bottom: 1px solid var(--gray-200);
+  box-shadow: var(--shadow-xs);
+  z-index: var(--z-sticky);
+}
+
+.module-nav-container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 var(--space-6);
+  display: flex;
+  align-items: center;
+  gap: var(--space-8);
+  min-height: var(--nav-height);
+}
+
+/* Main Title */
+.module-nav-title {
+  flex-shrink: 0;
+  padding: var(--space-4) 0;
+  border-right: 2px solid var(--gray-200);
+  padding-right: var(--space-8);
+}
+
+.module-nav-title h2 {
+  font-size: var(--font-2xl);
+  font-weight: var(--font-bold);
+  color: var(--text-primary);
+  margin: 0;
+  white-space: nowrap;
+}
+
+/* Module Tabs */
+.module-tabs {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  overflow-x: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.module-tabs::-webkit-scrollbar {
+  display: none;
+}
+
+.module-tab {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-3) var(--space-4);
+  min-width: fit-content;
+  background-color: transparent;
+  border: none;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.module-tab:hover {
+  background-color: var(--gray-50);
+}
+
+.module-tab.active {
+  background-color: var(--primary-blue-pale);
+}
+
+.module-tab-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background-color: var(--gray-100);
+  border-radius: var(--radius-md);
+  color: var(--text-secondary);
+  flex-shrink: 0;
+  transition: all var(--transition-fast);
+}
+
+.module-tab:hover .module-tab-icon {
+  background-color: var(--gray-200);
+  color: var(--text-primary);
+}
+
+.module-tab.active .module-tab-icon {
+  background-color: var(--primary-blue);
+  color: var(--text-inverse);
+}
+
+.module-tab-text {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  text-align: left;
+}
+
+.module-tab-title {
+  font-size: var(--font-base);
+  font-weight: var(--font-semibold);
+  color: var(--text-primary);
+  line-height: var(--line-height-tight);
+  white-space: nowrap;
+}
+
+.module-tab-subtitle {
+  font-size: var(--font-xs);
+  font-weight: var(--font-normal);
+  color: var(--text-secondary);
+  line-height: var(--line-height-tight);
+  white-space: nowrap;
+}
+
+.module-tab.active .module-tab-title {
+  color: var(--primary-blue);
+}
+
+.module-tab.active .module-tab-subtitle {
+  color: var(--primary-blue-dark);
+}
+
+.module-tab-indicator {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60%;
+  height: 3px;
+  background-color: var(--primary-blue);
+  border-radius: var(--radius-full);
+  animation: slideIn var(--transition-fast);
+}
+
+/* Animations */
+@keyframes slideIn {
+  from {
+    width: 0;
+    opacity: 0;
+  }
+  to {
+    width: 60%;
+    opacity: 1;
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .module-nav-container {
+    gap: var(--space-4);
+  }
+
+  .module-nav-title {
+    padding-right: var(--space-4);
+  }
+
+  .module-tab {
+    padding: var(--space-2) var(--space-3);
+  }
+
+  .module-tab-icon {
+    width: 36px;
+    height: 36px;
+  }
+
+  .module-tab-title {
+    font-size: var(--font-sm);
+  }
+
+  .module-tab-subtitle {
+    font-size: 10px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .module-nav-title h2 {
+    font-size: var(--font-xl);
+  }
+}
+
+@media (max-width: 768px) {
+  .module-nav-container {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-3);
+    padding: var(--space-4);
+    min-height: auto;
+  }
+
+  .module-nav-title {
+    border-right: none;
+    border-bottom: 2px solid var(--gray-200);
+    padding-right: 0;
+    padding-bottom: var(--space-3);
+    width: 100%;
+  }
+
+  .module-nav-title h2 {
+    font-size: var(--font-lg);
+  }
+
+  .module-tabs {
+    width: 100%;
+    padding-bottom: var(--space-2);
+  }
+
+  .module-tab {
+    flex-direction: column;
+    gap: var(--space-2);
+    padding: var(--space-3);
+    min-width: 90px;
+  }
+
+  .module-tab-text {
+    align-items: center;
+    text-align: center;
+  }
+
+  .module-tab-icon {
+    width: 32px;
+    height: 32px;
+  }
+
+  .module-tab-icon svg {
+    width: 16px;
+    height: 16px;
+  }
+
+  .module-tab-indicator {
+    bottom: 2px;
+  }
+}
+
+/* Focus Styles */
+.module-tab:focus-visible {
+  outline: 2px solid var(--primary-blue);
+  outline-offset: 2px;
+}

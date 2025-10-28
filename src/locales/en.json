@@ -1,0 +1,78 @@
+{
+  "app": {
+    "title": "Startup Business Intelligence",
+    "goToGlobalMarket": "Go to Global Market"
+  },
+  "header": {
+    "notifications": "Notifications",
+    "settings": "Settings",
+    "profile": "Profile",
+    "language": "Language"
+  },
+  "modules": {
+    "overview": {
+      "title": "Overview",
+      "subtitle": "Dashboard"
+    },
+    "marketStrategy": {
+      "title": "Market Strategy",
+      "subtitle": "Global Market Analysis"
+    },
+    "resourceSupport": {
+      "title": "Resource Support",
+      "subtitle": "Government Subsidies"
+    },
+    "fundingSupport": {
+      "title": "Funding Support",
+      "subtitle": "Investment Opportunities"
+    },
+    "expertTalent": {
+      "title": "Expert Talent",
+      "subtitle": "Consultant Matching"
+    },
+    "orderCooperation": {
+      "title": "Order Cooperation",
+      "subtitle": "Business Partnership"
+    }
+  },
+  "overview": {
+    "welcome": "Welcome to ITRI Startup Platform",
+    "description": "Integrated global business intelligence for enterprise growth",
+    "viewTimeline": "View Annual Timeline",
+    "statistics": "Statistics",
+    "totalOpportunities": "Total Opportunities",
+    "activePrograms": "Active Programs",
+    "expertConsultants": "Expert Consultants",
+    "fundingOptions": "Funding Options",
+    "recentUpdates": "Recent Updates",
+    "quickAccess": "Quick Access",
+    "dataOverview": "Data Overview"
+  },
+  "filter": {
+    "title": "Filter",
+    "clearAll": "Clear All",
+    "date": "Date",
+    "topic": "Topic",
+    "apply": "Apply",
+    "collapse": "Collapse",
+    "expand": "Expand"
+  },
+  "common": {
+    "loading": "Loading...",
+    "noData": "No data available",
+    "learnMore": "Learn More",
+    "apply": "Apply",
+    "contact": "Contact",
+    "search": "Search",
+    "filter": "Filter",
+    "results": "results"
+  },
+  "footer": {
+    "copyright": "copyright © ITRI all rights reserved",
+    "contact": "Contact Us",
+    "address": "Address",
+    "links": "Links",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Service"
+  }
+}

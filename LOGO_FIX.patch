@@ -1,0 +1,89 @@
+# Logo顯示修復方案
+
+## 修改1: OrderCooperation.jsx (Line ~85-95)
+找到這段代碼：
+```jsx
+<div className="company-logo-container">
+  <div className="company-logo">
+    <FiImage size={32} />
+    <span className="logo-placeholder">Logo</span>
+  </div>
+  <p className="logo-hint">
+    {currentLang === 'en' ? 'Upload to' : '上傳位置'}: /public{opportunity.company.logo}
+  </p>
+</div>
+```
+
+替換為：
+```jsx
+<div className="company-logo-container">
+  <div className="company-logo">
+    {opportunity.company.logo ? (
+      <img 
+        src={opportunity.company.logo} 
+        alt={opportunity.company.name}
+        className="company-logo-img"
+        onError={(e) => {
+          e.target.style.display = 'none';
+          e.target.nextSibling.style.display = 'flex';
+        }}
+      />
+    ) : null}
+    <div className="logo-placeholder-content">
+      <FiImage size={32} />
+      <span className="logo-placeholder">Logo</span>
+    </div>
+  </div>
+  <p className="logo-hint">
+    {opportunity.company.logo || '/assets/logos/company-logo.png'}
+  </p>
+</div>
+```
+
+## 修改2: OrderCooperation.css (Line 101-128)
+找到 .company-logo 相關樣式，替換為：
+
+```css
+.company-logo {
+  width: 180px;
+  height: 120px;
+  background-color: var(--gray-50);
+  border: 2px solid var(--gray-200);
+  border-radius: var(--radius-base);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.company-logo-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  padding: var(--space-3);
+}
+
+.logo-placeholder-content {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-2);
+  color: var(--text-tertiary);
+}
+
+.logo-placeholder {
+  font-size: var(--font-sm);
+  font-weight: var(--font-medium);
+  color: var(--text-tertiary);
+}
+
+.logo-hint {
+  font-size: var(--font-xs);
+  color: var(--text-secondary);
+  text-align: center;
+  margin: 0;
+  max-width: 180px;
+  word-break: break-all;
+}
+```

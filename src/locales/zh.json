@@ -1,0 +1,78 @@
+{
+  "app": {
+    "title": "新創商情總覽",
+    "goToGlobalMarket": "Go to Global Market"
+  },
+  "header": {
+    "notifications": "通知",
+    "settings": "設定",
+    "profile": "個人資料",
+    "language": "語言"
+  },
+  "modules": {
+    "overview": {
+      "title": "總覽",
+      "subtitle": "數據儀表板"
+    },
+    "marketStrategy": {
+      "title": "市場策略",
+      "subtitle": "全球市場分析"
+    },
+    "resourceSupport": {
+      "title": "資源補助",
+      "subtitle": "政府補助資源"
+    },
+    "fundingSupport": {
+      "title": "資金支持",
+      "subtitle": "投資融資機會"
+    },
+    "expertTalent": {
+      "title": "專家人才",
+      "subtitle": "顧問人才媒合"
+    },
+    "orderCooperation": {
+      "title": "訂單合作",
+      "subtitle": "商業合作機會"
+    }
+  },
+  "overview": {
+    "welcome": "歡迎使用 ITRI 新創商情平台",
+    "description": "整合全球商業情資，助力企業成長",
+    "viewTimeline": "查看年度計畫時程",
+    "statistics": "統計數據",
+    "totalOpportunities": "合作機會總數",
+    "activePrograms": "進行中計畫",
+    "expertConsultants": "專業顧問",
+    "fundingOptions": "融資方案",
+    "recentUpdates": "最新更新",
+    "quickAccess": "快速進入",
+    "dataOverview": "數據總覽"
+  },
+  "filter": {
+    "title": "篩選",
+    "clearAll": "清除全部",
+    "date": "日期",
+    "topic": "主題",
+    "apply": "套用",
+    "collapse": "收合",
+    "expand": "展開"
+  },
+  "common": {
+    "loading": "載入中...",
+    "noData": "目前沒有資料",
+    "learnMore": "了解更多",
+    "apply": "申請",
+    "contact": "聯絡",
+    "search": "搜尋",
+    "filter": "篩選",
+    "results": "筆結果"
+  },
+  "footer": {
+    "copyright": "copyright © ITRI all rights reserved",
+    "contact": "聯絡我們",
+    "address": "地址",
+    "links": "相關連結",
+    "privacy": "隱私權政策",
+    "terms": "使用條款"
+  }
+}
