@@ -469,108 +469,6 @@ export const resourceSupportData = [
   }
 ];
 
-export const fundingSupportData = [
-  {
-    id: 1,
-    programName: 'SBIR創新研發計畫',
-    programNameEn: 'SBIR Innovation R&D Program',
-    organizer: '經濟部中小企業處',
-    organizerEn: 'Small and Medium Enterprise Administration, MOEA',
-    fundingAmount: '最高1,000萬元',
-    fundingAmountEn: 'Up to 10 million NTD',
-    subsidyRatio: '最高50%',
-    subsidyRatioEn: 'Up to 50%',
-    applicationPeriod: '2025年1月15日 - 2月28日',
-    applicationPeriodEn: 'January 15 - February 28, 2025',
-    targetAudience: {
-      zh: '國內依法登記成立之中小企業，研發創新產品、服務或技術',
-      en: 'SMEs legally registered in Taiwan, developing innovative products, services or technologies'
-    },
-    requirements: {
-      zh: [
-        '具有研發創新能力',
-        '研發計畫具市場應用潛力',
-        '財務健全，無違法紀錄',
-        '提供配合款'
-      ],
-      en: [
-        'R&D innovation capability',
-        'R&D plan has market application potential',
-        'Sound finances, no violations',
-        'Provide matching funds'
-      ]
-    },
-    benefits: {
-      zh: [
-        '研發經費補助',
-        '技術輔導諮詢',
-        '行銷推廣協助',
-        '國際鏈結機會'
-      ],
-      en: [
-        'R&D funding subsidy',
-        'Technical consultation',
-        'Marketing assistance',
-        'International linkage opportunities'
-      ]
-    },
-    contactInfo: {
-      phone: '0800-056-476',
-      email: 'sbir@moeasmea.gov.tw',
-      website: 'https://www.sbir.org.tw'
-    }
-  },
-  {
-    id: 2,
-    programName: 'A+早期新創補助',
-    programNameEn: 'A+ Early-Stage Startup Subsidy',
-    organizer: '國家發展委員會',
-    organizerEn: 'National Development Council',
-    fundingAmount: '最高500萬元',
-    fundingAmountEn: 'Up to 5 million NTD',
-    subsidyRatio: '最高70%',
-    subsidyRatioEn: 'Up to 70%',
-    applicationPeriod: '2025年1月20日 - 3月31日',
-    applicationPeriodEn: 'January 20 - March 31, 2025',
-    targetAudience: {
-      zh: '設立未滿5年之新創公司，具創新商業模式或技術',
-      en: 'Startups established less than 5 years with innovative business models or technologies'
-    },
-    requirements: {
-      zh: [
-        '公司設立未滿5年',
-        '具創新性與成長潛力',
-        '創辦人持股達20%以上',
-        '未獲其他政府補助'
-      ],
-      en: [
-        'Company established less than 5 years',
-        'Innovative with growth potential',
-        'Founder shareholding over 20%',
-        'No other government subsidies received'
-      ]
-    },
-    benefits: {
-      zh: [
-        '研發與營運資金',
-        '創業導師輔導',
-        '投資媒合服務',
-        '海外市場拓展支援'
-      ],
-      en: [
-        'R&D and operating funds',
-        'Startup mentor guidance',
-        'Investment matching services',
-        'Overseas market expansion support'
-      ]
-    },
-    contactInfo: {
-      phone: '02-2316-5300',
-      email: 'startup@ndc.gov.tw',
-      website: 'https://www.ndc.gov.tw'
-    }
-  }
-];
 
 export const expertTalentData = [
   {
@@ -636,5 +534,261 @@ export const expertTalentData = [
     hourlyRate: 'NT$ 10,000 - 18,000',
     contactEmail: 'ytli@biotech-expert.tw',
     profileImage: '/assets/images/expert2.jpg'
+  }
+];
+
+
+export const fundingSupportData = [
+  {
+    id: 1,
+    title: 'SBIR 小型企業創新研發計畫',
+    titleEn: 'SBIR Small Business Innovation Research',
+    description: '經濟部中小及新創企業署推動的創新研發補助計畫，協助中小企業進行技術與產品創新研發活動，培育研發人才，提升企業競爭力。Phase 1 最高補助100萬元，Phase 2 最高補助1,000萬元。',
+    descriptionEn: 'Innovation R&D subsidy program by MOEA SME and Startup Agency, supporting SMEs in technical and product innovation, talent development, and competitiveness enhancement. Phase 1 up to NT$1M, Phase 2 up to NT$10M.',
+    imageUrl: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800&h=600&fit=crop',
+    region: '全國',
+    regionEn: 'National',
+    industries: ['電資通光', '機電運輸', '生技醫材', '能源環境', '服務創新'],
+    amount: '最高 100 萬元 (Phase 1) / 1,000 萬元 (Phase 2)',
+    amountEn: 'Up to NT$1M (Phase 1) / NT$10M (Phase 2)',
+    organizer: '經濟部中小及新創企業署',
+    organizerEn: 'MOEA SME and Startup Agency',
+    applicationType: '隨到隨審',
+    applicationTypeEn: 'Rolling Basis',
+    status: '全年開放',
+    statusEn: 'Year Round',
+    updateDate: '2025-11-05',
+    website: 'https://www.sbir.org.tw/'
+  },
+  {
+    id: 2,
+    title: 'SIIR 服務業創新研發計畫',
+    titleEn: 'SIIR Service Industry Innovation Research',
+    description: '經濟部商業發展署推動的服務業創新補助計畫，鼓勵服務業進行商業模式創新、智慧應用與低碳轉型，提升服務品質與競爭力。分為個別創新、合作創新和國際化進階創新三類。',
+    descriptionEn: 'Service industry innovation subsidy by MOEA Commerce Development Agency, encouraging business model innovation, smart applications, and low-carbon transformation. Three categories: individual, collaborative, and international innovation.',
+    imageUrl: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop',
+    region: '全國',
+    regionEn: 'National',
+    industries: ['服務創新', '文化創意', '電資通光'],
+    amount: '最高 1,000 萬元',
+    amountEn: 'Up to NT$10M',
+    organizer: '經濟部商業發展署',
+    organizerEn: 'MOEA Commerce Development Agency',
+    applicationType: '分期受理',
+    applicationTypeEn: 'Periodic Application',
+    status: '申請中',
+    statusEn: 'Now Accepting',
+    updateDate: '2025-10-30',
+    website: 'https://gcis.nat.gov.tw/neo-s/Web/Default.aspx'
+  },
+  {
+    id: 3,
+    title: 'U-start 創新創業計畫',
+    titleEn: 'U-start Innovation and Startup Program',
+    description: '教育部青年發展署推動的大專院校創業補助計畫，鼓勵大專校院學生將創意構想轉化為創業實踐，提供創業啟動金與育成輔導。分為第一階段(最高50萬)與第二階段(最高100萬)。',
+    descriptionEn: 'University startup program by Youth Development Administration, supporting college students to transform creative ideas into entrepreneurial practices. Stage 1 up to NT$500K, Stage 2 up to NT$1M.',
+    imageUrl: 'https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=800&h=600&fit=crop',
+    region: '全國',
+    regionEn: 'National',
+    industries: ['電資通光', '服務創新', '文化創意', '生技醫材'],
+    amount: '最高 150 萬元',
+    amountEn: 'Up to NT$1.5M',
+    organizer: '教育部青年發展署',
+    organizerEn: 'Youth Development Administration',
+    applicationType: '分期受理',
+    applicationTypeEn: 'Periodic Application',
+    status: '即將開放',
+    statusEn: 'Coming Soon',
+    updateDate: '2025-10-20',
+    website: 'https://youthfirst.yda.gov.tw/'
+  },
+  {
+    id: 4,
+    title: '青年創業及啟動金貸款',
+    titleEn: 'Youth Entrepreneurship and Startup Loans',
+    description: '經濟部提供的青年創業貸款，協助年輕創業者取得創業初期所需資金。貸款額度最高1,200萬元，前5年政府補貼利息，適合設立登記未滿8年之中小企業。',
+    descriptionEn: 'Youth entrepreneurship loan program by MOEA, helping young entrepreneurs obtain startup capital. Maximum loan of NT$12M with 5-year government interest subsidy for SMEs established less than 8 years.',
+    imageUrl: 'https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?w=800&h=600&fit=crop',
+    region: '全國',
+    regionEn: 'National',
+    industries: ['電資通光', '機電運輸', '生技醫材', '能源環境', '服務創新', '文化創意'],
+    amount: '最高 1,200 萬元',
+    amountEn: 'Up to NT$12M',
+    organizer: '經濟部中小及新創企業署',
+    organizerEn: 'MOEA SME and Startup Agency',
+    applicationType: '隨到隨審',
+    applicationTypeEn: 'Rolling Basis',
+    status: '全年開放',
+    statusEn: 'Year Round',
+    updateDate: '2025-11-01',
+    website: 'https://www.bot.com.tw/tw/personal-banking/loan/Personal-Policy-Loan/young-loan'
+  },
+  {
+    id: 5,
+    title: '台北市 SITI 創業補助',
+    titleEn: 'Taipei SITI Startup Subsidy',
+    description: '台北市產業發展局推動的創業補助計畫，支持設立於台北市之新創企業進行創新研發、品牌建立與市場拓展。補助範圍涵蓋創業、研發、品牌三大類別。',
+    descriptionEn: 'Taipei SITI startup subsidy program by Taipei City Government, supporting startups in Taipei for innovation R&D, branding, and market expansion. Three categories: startup, R&D, and branding.',
+    imageUrl: 'https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=800&h=600&fit=crop',
+    region: '台北市',
+    regionEn: 'Taipei City',
+    industries: ['電資通光', '服務創新', '文化創意'],
+    amount: '最高 100 萬元',
+    amountEn: 'Up to NT$1M',
+    organizer: '台北市產業發展局',
+    organizerEn: 'Taipei City Industry Development Bureau',
+    applicationType: '隨到隨審',
+    applicationTypeEn: 'Rolling Basis',
+    status: '申請中',
+    statusEn: 'Now Accepting',
+    updateDate: '2025-10-25',
+    website: 'https://www.doed.gov.taipei/'
+  },
+  {
+    id: 6,
+    title: '新創圓夢網補助資源',
+    titleEn: 'Taiwan Startup Terrace Resource Platform',
+    description: '經濟部中小及新創企業署整合之新創補助資源平台，提供完整的創業補助資訊、申請流程與輔導資源，協助新創團隊快速找到適合的補助計畫。',
+    descriptionEn: 'Integrated startup subsidy resource platform by MOEA SME and Startup Agency, providing comprehensive startup subsidy information, application processes, and counseling resources.',
+    imageUrl: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&h=600&fit=crop',
+    region: '全國',
+    regionEn: 'National',
+    industries: ['電資通光', '機電運輸', '生技醫材', '能源環境', '服務創新', '文化創意'],
+    amount: '依計畫而定',
+    amountEn: 'Varies by Program',
+    organizer: '經濟部中小及新創企業署',
+    organizerEn: 'MOEA SME and Startup Agency',
+    applicationType: '資源平台',
+    applicationTypeEn: 'Resource Platform',
+    status: '全年開放',
+    statusEn: 'Year Round',
+    updateDate: '2025-11-05',
+    website: 'https://startup.sme.gov.tw/'
+  },
+  {
+    id: 7,
+    title: '經濟部補助計畫入口網',
+    titleEn: 'MOEA Subsidy Program Portal',
+    description: '經濟部整合之補助計畫申請入口網站，提供各項產業補助、研發補助、創新補助等計畫資訊，一站式申請服務，簡化申請流程。',
+    descriptionEn: 'MOEA integrated subsidy program portal, providing various industry subsidies, R&D subsidies, and innovation subsidies with one-stop application service.',
+    imageUrl: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=600&fit=crop',
+    region: '全國',
+    regionEn: 'National',
+    industries: ['電資通光', '機電運輸', '生技醫材', '能源環境', '服務創新'],
+    amount: '依計畫而定',
+    amountEn: 'Varies by Program',
+    organizer: '經濟部',
+    organizerEn: 'Ministry of Economic Affairs',
+    applicationType: '資源平台',
+    applicationTypeEn: 'Resource Platform',
+    status: '全年開放',
+    statusEn: 'Year Round',
+    updateDate: '2025-11-03',
+    website: 'https://service.moea.gov.tw/EE502/NewPortal/'
+  },
+  {
+    id: 8,
+    title: '文化部文化內容策進院補助',
+    titleEn: 'TAICCA Cultural Content Subsidy',
+    description: '文化內容策進院推動的文化創意產業補助計畫,支持影視、音樂、出版、數位內容等文化內容產業發展,提供投融資、國際拓展與產業升級補助。',
+    descriptionEn: 'TAICCA cultural content industry subsidy supporting film, music, publishing, and digital content development with investment, international expansion, and industry upgrade support.',
+    imageUrl: 'https://images.unsplash.com/photo-1505373877841-8d25f7d46678?w=800&h=600&fit=crop',
+    region: '全國',
+    regionEn: 'National',
+    industries: ['文化創意', '服務創新'],
+    amount: '依計畫而定',
+    amountEn: 'Varies by Program',
+    organizer: '文化內容策進院',
+    organizerEn: 'Taiwan Creative Content Agency',
+    applicationType: '分期受理',
+    applicationTypeEn: 'Periodic Application',
+    status: '申請中',
+    statusEn: 'Now Accepting',
+    updateDate: '2025-10-18',
+    website: 'https://taicca.tw/'
+  },
+  {
+    id: 9,
+    title: '桃園市地方型 SBIR',
+    titleEn: 'Taoyuan Local SBIR',
+    description: '桃園市政府經濟發展局推動的地方型創新研發補助計畫,協助設立於桃園市之中小企業進行創新研發,補助金額最高100萬元,申請門檻較中央型SBIR更為親民。',
+    descriptionEn: 'Taoyuan local SBIR program by Taoyuan City Government, supporting SMEs in Taoyuan for innovation R&D with up to NT$1M subsidy and more accessible requirements than central SBIR.',
+    imageUrl: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&h=600&fit=crop',
+    region: '桃園市',
+    regionEn: 'Taoyuan',
+    industries: ['電資通光', '機電運輸', '能源環境'],
+    amount: '最高 100 萬元',
+    amountEn: 'Up to NT$1M',
+    organizer: '桃園市政府經濟發展局',
+    organizerEn: 'Taoyuan Economic Development Bureau',
+    applicationType: '分期受理',
+    applicationTypeEn: 'Periodic Application',
+    status: '即將開放',
+    statusEn: 'Coming Soon',
+    updateDate: '2025-10-15',
+    website: 'https://deda.tycg.gov.tw/'
+  },
+  {
+    id: 10,
+    title: '台中市地方型 SBIR',
+    titleEn: 'Taichung Local SBIR',
+    description: '台中市政府經濟發展局推動的地方型創新研發補助,支持設立於台中市之中小企業進行產品與技術創新,最高補助100萬元,協助企業提升競爭力與技術能量。',
+    descriptionEn: 'Taichung local SBIR program supporting SMEs in Taichung for product and technology innovation with up to NT$1M subsidy, enhancing competitiveness and technical capabilities.',
+    imageUrl: 'https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&h=600&fit=crop',
+    region: '台中市',
+    regionEn: 'Taichung',
+    industries: ['機電運輸', '生技醫材', '服務創新'],
+    amount: '最高 100 萬元',
+    amountEn: 'Up to NT$1M',
+    organizer: '台中市政府經濟發展局',
+    organizerEn: 'Taichung Economic Development Bureau',
+    applicationType: '分期受理',
+    applicationTypeEn: 'Periodic Application',
+    status: '申請中',
+    statusEn: 'Now Accepting',
+    updateDate: '2025-10-22',
+    website: 'https://www.economic.taichung.gov.tw/'
+  },
+  {
+    id: 11,
+    title: '高雄市地方型 SBIR',
+    titleEn: 'Kaohsiung Local SBIR',
+    description: '高雄市政府經濟發展局推動的地方型創新研發補助計畫,鼓勵設立於高雄市之中小企業投入創新研發,補助金額最高100萬元,特別支持5G、AIoT、智慧製造等領域。',
+    descriptionEn: 'Kaohsiung local SBIR program encouraging SMEs in Kaohsiung to invest in innovation R&D with up to NT$1M subsidy, particularly supporting 5G, AIoT, and smart manufacturing.',
+    imageUrl: 'https://images.unsplash.com/photo-1497366811353-6870744d04b2?w=800&h=600&fit=crop',
+    region: '高雄市',
+    regionEn: 'Kaohsiung',
+    industries: ['電資通光', '機電運輸', '能源環境'],
+    amount: '最高 100 萬元',
+    amountEn: 'Up to NT$1M',
+    organizer: '高雄市政府經濟發展局',
+    organizerEn: 'Kaohsiung Economic Development Bureau',
+    applicationType: '分期受理',
+    applicationTypeEn: 'Periodic Application',
+    status: '全年開放',
+    statusEn: 'Year Round',
+    updateDate: '2025-10-28',
+    website: 'https://edbkcg.kcg.gov.tw/'
+  },
+  {
+    id: 12,
+    title: 'FINDIT 新創資料庫',
+    titleEn: 'FINDIT Startup Database',
+    description: '國家發展委員會建置的新創資料庫與活動平台,提供新創補助資訊、創投媒合、產業資源與活動訊息,是台灣最完整的新創生態系資源整合平台。',
+    descriptionEn: 'National Development Council startup database and event platform, providing subsidy information, VC matchmaking, industry resources, and events - Taiwan\'s most comprehensive startup ecosystem platform.',
+    imageUrl: 'https://images.unsplash.com/photo-1559136555-9303baea8ebd?w=800&h=600&fit=crop',
+    region: '全國',
+    regionEn: 'National',
+    industries: ['電資通光', '機電運輸', '生技醫材', '能源環境', '服務創新', '文化創意'],
+    amount: '資源平台',
+    amountEn: 'Resource Platform',
+    organizer: '國家發展委員會',
+    organizerEn: 'National Development Council',
+    applicationType: '資源平台',
+    applicationTypeEn: 'Resource Platform',
+    status: '全年開放',
+    statusEn: 'Year Round',
+    updateDate: '2025-11-05',
+    website: 'https://findit.org.tw/'
   }
 ];

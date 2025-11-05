@@ -1,134 +1,272 @@
-// API 基礎配置
+// API Service for ITRI Startup Platform
 const API_BASE_URL = process.env.REACT_APP_API_URL || 'http://localhost:3001/api';
 
-// 統一的 fetch 封裝
-async function apiFetch(endpoint, options = {}) {
-  const url = `${API_BASE_URL}${endpoint}`;
-  
-  const defaultOptions = {
-    headers: {
-      'Content-Type': 'application/json',
-    },
-  };
-  
-  const config = {
-    ...defaultOptions,
-    ...options,
-    headers: {
-      ...defaultOptions.headers,
-      ...options.headers,
-    },
-  };
-  
-  try {
-    const response = await fetch(url, config);
-    const data = await response.json();
-    
-    if (!response.ok) {
-      throw new Error(data.message || 'API request failed');
-    }
-    
-    return data;
-  } catch (error) {
-    console.error('API Error:', error);
-    throw error;
-  }
-}
-
-// Market Strategies API
+// 市場策略 API
 export const marketStrategyAPI = {
-  // 獲取所有策略
-  getAll: async (filters = {}) => {
-    const params = new URLSearchParams();
-    if (filters.industry) params.append('industry', filters.industry);
-    if (filters.status) params.append('status', filters.status);
-    
-    const endpoint = `/market-strategies${params.toString() ? '?' + params.toString() : ''}`;
-    return apiFetch(endpoint);
+  getAll: async (params = {}) => {
+    try {
+      const queryString = new URLSearchParams(params).toString();
+      const response = await fetch(`${API_BASE_URL}/market-strategies?${queryString}`);
+      if (!response.ok) throw new Error('Failed to fetch market strategies');
+      return await response.json();
+    } catch (error) {
+      console.error('Error fetching market strategies:', error);
+      throw error;
+    }
   },
-  
-  // 獲取單一策略
+
   getById: async (id) => {
-    return apiFetch(`/market-strategies/${id}`);
+    try {
+      const response = await fetch(`${API_BASE_URL}/market-strategies/${id}`);
+      if (!response.ok) throw new Error('Failed to fetch market strategy');
+      return await response.json();
+    } catch (error) {
+      console.error('Error fetching market strategy:', error);
+      throw error;
+    }
   },
-  
-  // 新增策略
+
   create: async (data) => {
-    return apiFetch('/market-strategies', {
-      method: 'POST',
-      body: JSON.stringify(data),
-    });
+    try {
+      const response = await fetch(`${API_BASE_URL}/market-strategies`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+      });
+      if (!response.ok) throw new Error('Failed to create market strategy');
+      return await response.json();
+    } catch (error) {
+      console.error('Error creating market strategy:', error);
+      throw error;
+    }
   },
-  
-  // 更新狀態
-  updateStatus: async (id, status) => {
-    return apiFetch(`/market-strategies/${id}/status`, {
-      method: 'PATCH',
-      body: JSON.stringify({ status }),
-    });
+
+  update: async (id, data) => {
+    try {
+      const response = await fetch(`${API_BASE_URL}/market-strategies/${id}`, {
+        method: 'PUT',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+      });
+      if (!response.ok) throw new Error('Failed to update market strategy');
+      return await response.json();
+    } catch (error) {
+      console.error('Error updating market strategy:', error);
+      throw error;
+    }
   },
-  
-  // 刪除策略
+
   delete: async (id) => {
-    return apiFetch(`/market-strategies/${id}`, {
-      method: 'DELETE',
-    });
-  },
+    try {
+      const response = await fetch(`${API_BASE_URL}/market-strategies/${id}`, {
+        method: 'DELETE',
+      });
+      if (!response.ok) throw new Error('Failed to delete market strategy');
+      return await response.json();
+    } catch (error) {
+      console.error('Error deleting market strategy:', error);
+      throw error;
+    }
+  }
 };
 
-// Order Cooperations API
+// 訂單合作 API
 export const orderCooperationAPI = {
-  // 獲取所有訂單
-  getAll: async (filters = {}) => {
-    const params = new URLSearchParams();
-    if (filters.industry) params.append('industry', filters.industry);
-    if (filters.status) params.append('status', filters.status);
-    
-    const endpoint = `/order-cooperations${params.toString() ? '?' + params.toString() : ''}`;
-    return apiFetch(endpoint);
+  getAll: async (params = {}) => {
+    try {
+      const queryString = new URLSearchParams(params).toString();
+      const response = await fetch(`${API_BASE_URL}/order-cooperations?${queryString}`);
+      if (!response.ok) throw new Error('Failed to fetch order cooperations');
+      return await response.json();
+    } catch (error) {
+      console.error('Error fetching order cooperations:', error);
+      throw error;
+    }
   },
-  
-  // 獲取單一訂單
+
   getById: async (id) => {
-    return apiFetch(`/order-cooperations/${id}`);
+    try {
+      const response = await fetch(`${API_BASE_URL}/order-cooperations/${id}`);
+      if (!response.ok) throw new Error('Failed to fetch order cooperation');
+      return await response.json();
+    } catch (error) {
+      console.error('Error fetching order cooperation:', error);
+      throw error;
+    }
   },
-  
-  // 新增訂單
+
   create: async (data) => {
-    return apiFetch('/order-cooperations', {
-      method: 'POST',
-      body: JSON.stringify(data),
-    });
+    try {
+      const response = await fetch(`${API_BASE_URL}/order-cooperations`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+      });
+      if (!response.ok) throw new Error('Failed to create order cooperation');
+      return await response.json();
+    } catch (error) {
+      console.error('Error creating order cooperation:', error);
+      throw error;
+    }
   },
-  
-  // 更新狀態
-  updateStatus: async (id, status) => {
-    return apiFetch(`/order-cooperations/${id}/status`, {
-      method: 'PATCH',
-      body: JSON.stringify({ status }),
-    });
+
+  update: async (id, data) => {
+    try {
+      const response = await fetch(`${API_BASE_URL}/order-cooperations/${id}`, {
+        method: 'PUT',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+      });
+      if (!response.ok) throw new Error('Failed to update order cooperation');
+      return await response.json();
+    } catch (error) {
+      console.error('Error updating order cooperation:', error);
+      throw error;
+    }
   },
-  
-  // 刪除訂單
+
   delete: async (id) => {
-    return apiFetch(`/order-cooperations/${id}`, {
-      method: 'DELETE',
-    });
+    try {
+      const response = await fetch(`${API_BASE_URL}/order-cooperations/${id}`, {
+        method: 'DELETE',
+      });
+      if (!response.ok) throw new Error('Failed to delete order cooperation');
+      return await response.json();
+    } catch (error) {
+      console.error('Error deleting order cooperation:', error);
+      throw error;
+    }
+  }
+};
+
+// 資源補助 API
+export const fundingSupportAPI = {
+  getAll: async (params = {}) => {
+    try {
+      const queryString = new URLSearchParams(params).toString();
+      const response = await fetch(`${API_BASE_URL}/funding-support?${queryString}`);
+      if (!response.ok) throw new Error('Failed to fetch funding support');
+      return await response.json();
+    } catch (error) {
+      console.error('Error fetching funding support:', error);
+      throw error;
+    }
   },
+
+  getById: async (id) => {
+    try {
+      const response = await fetch(`${API_BASE_URL}/funding-support/${id}`);
+      if (!response.ok) throw new Error('Failed to fetch funding support');
+      return await response.json();
+    } catch (error) {
+      console.error('Error fetching funding support:', error);
+      throw error;
+    }
+  },
+
+  create: async (data) => {
+    try {
+      const response = await fetch(`${API_BASE_URL}/funding-support`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+      });
+      if (!response.ok) throw new Error('Failed to create funding support');
+      return await response.json();
+    } catch (error) {
+      console.error('Error creating funding support:', error);
+      throw error;
+    }
+  },
+
+  update: async (id, data) => {
+    try {
+      const response = await fetch(`${API_BASE_URL}/funding-support/${id}`, {
+        method: 'PUT',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+      });
+      if (!response.ok) throw new Error('Failed to update funding support');
+      return await response.json();
+    } catch (error) {
+      console.error('Error updating funding support:', error);
+      throw error;
+    }
+  },
+
+  delete: async (id) => {
+    try {
+      const response = await fetch(`${API_BASE_URL}/funding-support/${id}`, {
+        method: 'DELETE',
+      });
+      if (!response.ok) throw new Error('Failed to delete funding support');
+      return await response.json();
+    } catch (error) {
+      console.error('Error deleting funding support:', error);
+      throw error;
+    }
+  }
+};
+
+// 專家人才 API (預留)
+export const expertTalentAPI = {
+  getAll: async (params = {}) => {
+    try {
+      const queryString = new URLSearchParams(params).toString();
+      const response = await fetch(`${API_BASE_URL}/expert-talent?${queryString}`);
+      if (!response.ok) throw new Error('Failed to fetch expert talent');
+      return await response.json();
+    } catch (error) {
+      console.error('Error fetching expert talent:', error);
+      throw error;
+    }
+  }
+};
+
+// 資源支援 API (預留)
+export const resourceSupportAPI = {
+  getAll: async (params = {}) => {
+    try {
+      const queryString = new URLSearchParams(params).toString();
+      const response = await fetch(`${API_BASE_URL}/resource-support?${queryString}`);
+      if (!response.ok) throw new Error('Failed to fetch resource support');
+      return await response.json();
+    } catch (error) {
+      console.error('Error fetching resource support:', error);
+      throw error;
+    }
+  }
 };
 
 // Health Check
 export const healthCheck = async () => {
   try {
-    return await apiFetch('/health');
+    const response = await fetch(`${API_BASE_URL}/health`);
+    if (!response.ok) throw new Error('API health check failed');
+    return await response.json();
   } catch (error) {
-    console.error('Health check failed:', error);
-    return { success: false, message: 'Server is not responding' };
+    console.error('API health check error:', error);
+    throw error;
   }
 };
 
 export default {
   marketStrategyAPI,
   orderCooperationAPI,
-  healthCheck,
+  fundingSupportAPI,
+  expertTalentAPI,
+  resourceSupportAPI,
+  healthCheck
 };
